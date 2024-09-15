@@ -1,0 +1,7 @@
+<input
+  class="form-control"
+  [ngModel]="value()"
+  (ngModelChange)="onChange($event)"
+  [placeholder]="placeholder()"
+  (blur)="onTouch()"
+>

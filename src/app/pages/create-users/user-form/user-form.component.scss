@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  align-self: flex-end;
+  cursor: pointer;
+
+  // * I would create variables for colors
+  color: red;
+}
+
+
+.country-suggestions {
+  color: green;
+}

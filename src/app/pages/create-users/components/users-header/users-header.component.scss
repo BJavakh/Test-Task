@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  gap: 15px;
+}
+
+.header {
+  &__invalid-count {
+    color: red;
+  }
+}

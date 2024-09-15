@@ -1,0 +1,20 @@
+.users-form {
+  &__forms {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  &__user-form {
+    width: calc((100% / 3) - 10px);
+  }
+
+  &__add-button {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: cadetblue;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,22 @@
+@if (reverseCounter()) {
+  <button
+    class="btn btn-danger"
+    (click)="onCancel()"
+  >
+    Cancel
+  </button>
+} @else {
+  <button
+    class="btn btn-primary"
+    [disabled]="isInvalid()"
+    (click)="onSubmit()"
+  >
+    Submit all forms
+  </button>
+}
+
+@if (invalidFormsCount() || reverseCounter()) {
+  <span class="header__invalid-count">
+    {{ reverseCounter() ? reverseCounter() : 'Invalid forms: ' + invalidFormsCount() }}
+  </span>
+}

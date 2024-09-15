@@ -1,0 +1,29 @@
+<form class="card p-5 mt-3" [formGroup]="form">
+  <spribe-users-header
+    [invalidFormsCount]="invalidFormsCount"
+    [isInvalid]="form.invalid"
+    [reverseCounter]="reverseCounter()"
+    (cancelTimer)="onCancelTimer()"
+    (submit)="onSubmit()"
+  />
+
+  <div class="users-form__forms" formArrayName="users">
+    @for (item of form.controls.users.controls; track item.value; let i = $index) {
+      <spribe-user-form
+        class="users-form__user-form"
+        [formGroupName]="i"
+        [userFormGroup]="item"
+        (remove)="onRemoveUserForm(i)"
+      />
+    }
+
+    @if (form.controls.users.controls.length < usersLimit()) {
+      <div
+        class="users-form__add-button card"
+        (click)="addUserForm()"
+      >
+        <ui-icon iconName="plus-circle" />
+      </div>
+    }
+  </div>
+</form>
